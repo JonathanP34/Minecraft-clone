@@ -2,7 +2,6 @@
  * Writer: Jonathan
  * Making the moving this super class
  */
-package minecraft;
 
 /**
  *
@@ -83,7 +82,11 @@ public class MovingThing {
     }
     
     public void setHP(int newHP) {
-        this.hp = newHP;
+        int health = this.hp = newHP;
+        if (health < 0) {
+            health = 0;
+            this.die("No hp"); 
+        }
     }
             
     //Other methods
@@ -103,7 +106,7 @@ public class MovingThing {
         return ret;
     }
     
-    public void die() {
-        System.out.println(this.type + " died");
+    public void die(String reason) {
+        System.out.println(this.type + " died from " + reason);
     }
 }
