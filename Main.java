@@ -5,7 +5,7 @@
 package minecraft;
 
 import java.util.*;
-public class Main {
+public class MainMovingThing {
     public static void main(String[] args) {
         String ret = "";
         
