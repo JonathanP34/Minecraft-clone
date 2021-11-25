@@ -1,3 +1,10 @@
+/**
+* This is the Item class. It is a base to aeverything that can be considered an item
+*
+* @author Christopher Vasilianu
+* @date: Nov 25, 2021
+*/
+
 public class Item {
     private String type;
     private int numItem;
