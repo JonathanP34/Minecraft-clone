@@ -28,7 +28,7 @@ public class Item {
     // Methods
     
     public void removeConsumable() {
-        this.hungerChange -=1;
+        this.numItem -=1;
     }
     
     public String toString() {
