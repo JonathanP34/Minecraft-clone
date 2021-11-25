@@ -1,7 +1,10 @@
 /**
- *
- * @author Jonathan Peters
- */
+* This is the MovingThing class. This class is the base for all moving things in our version of Minecraft
+*
+* @author Jonathan Petrs
+* @date Nov 25, 2021
+*/
+
 public class MovingThing {
     private int x,y,z;
     private int hp;
