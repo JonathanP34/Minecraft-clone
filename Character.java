@@ -80,9 +80,7 @@ public class Character extends MovingThing {
         if (this.hunger == 0) {
             this.die("Hunger");
         } else {
-            String terrain = "";
-            terrain = worldBuilder.generateTerrain(this);
-            System.out.println(terrain);  
+            System.out.println(WorldBuilder.generateTerrain(this));
         }
     }
 
@@ -91,4 +89,17 @@ public class Character extends MovingThing {
             this.hunger = 10;
         }
       }
+      
+    public void mineBlock(int x, int y, int z) {
+         int xDiff = this.getX() - x;
+         int yDiff = this.getY() - y;
+         
+         if (xDiff > -2 && xDiff < 2) {
+            if (yDiff > -2 && yDiff < 2) {
+               WorldBuilder.breakBlock(x, y);
+               
+            }
+         }
+    }
+}
 }
