@@ -6,7 +6,7 @@
 */
 
 public class PlacedBlock {
-    private String type;
+   private String type;
    private int x;
    private int y;
    private int z;
@@ -49,6 +49,12 @@ public class PlacedBlock {
    }
    
    //Setters
+   public void setPlace(int newX, int newY, int newZ) {
+      this.x = newX;
+      this.y = newY;
+      this.z = newZ;
+   }
+   
    public void setDurability(double newDurability) {
       this.durability -= newDurability;
       if (this.durability < 0) {
@@ -56,15 +62,23 @@ public class PlacedBlock {
       }
    }
    
-   public void setLocation(int newX, int newY, int newZ) {
-       this.x = newX;
-       this.y = newY;
-       this.z = newZ;
-   }
-   
    public void setType(String newType) {
-       this.type = newType;
+      this.type = newType;
    }
    
-   //Methods that do something
+   public static PlacedBlock[] makeBlocks() {
+      PlacedBlock[] blocks = new PlacedBlock[4];
+      blocks[0] = new PlacedBlock("Dirt", 0, 0, 0, 2, 2);
+      blocks[1] = new PlacedBlock("Stone", 0, 0, 0, 5, 3);
+      blocks[2] = new PlacedBlock("Iron", 0, 0, 0, 8, 5);
+      blocks[3] = new PlacedBlock("Sand", 0, 0, 0, 1, 0);
+      
+      return blocks;
+   }
+   
+   //Make a block.break method
+   
+   
 }
+
+
