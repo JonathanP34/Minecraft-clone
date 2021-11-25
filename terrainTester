@@ -1,0 +1,9 @@
+public class terrainTester {
+    public static void main(String[] args) {
+        String terrain = "";
+        Character c1 = new Character(0, 0, 0, 100, 1, 1, 1, "Character", 10.0, 0.0, 1.0, "Steve");
+    
+        terrain = worldBuilder.generateTerrain(c1);
+        System.out.println(terrain);
+    }
+}
