@@ -1,7 +1,7 @@
 /**
 * This is the Character class. This class extends the Moving things class and is the base for your playable character
 *
-* @author Jonathan Petrs
+* @author Jonathan Peters
 * @date Nov 25, 2021
 */
 
