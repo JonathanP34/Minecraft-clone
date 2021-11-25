@@ -1,7 +1,3 @@
-/*
- * Jonathan
- * Main
- */
 package minecraft;
 
 import java.util.*;
