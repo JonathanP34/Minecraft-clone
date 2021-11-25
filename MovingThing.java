@@ -1,9 +1,4 @@
 /**
- * Writer: Jonathan
- * Making the moving this super class
- */
-
-/**
  *
  * @author Jonathan Peters
  */
