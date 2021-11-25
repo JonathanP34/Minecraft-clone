@@ -1,3 +1,10 @@
+/**
+* This is the Character class. This class extends the Moving things class and is the base for your playable character
+*
+* @author Jonathan Petrs
+* @date Nov 25, 2021
+*/
+
 public class Character extends MovingThing {
     private double hunger;
     private double armor;
