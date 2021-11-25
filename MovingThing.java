@@ -1,7 +1,7 @@
 /**
 * This is the MovingThing class. This class is the base for all moving things in our version of Minecraft
 *
-* @author Jonathan Petrs
+* @author Jonathan Peters
 * @date Nov 25, 2021
 */
 
