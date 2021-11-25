@@ -17,7 +17,4 @@ public class Consumable extends Item{
     }
 
     // Methods
-    public void removeConsumable() {
-      this.hungerChange - 1 = this.hungerChange;
-    }
 }
