@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class worldBuilder {
+    public worldBuilder(){
+    }
+    
+    //Methods to do something
+    public static String generateTerrain(Character c1) {
+        String[] possibleBlocks = {"Iron", "Sand", "Sand", "Sand", "Sand", "Dirt", "Dirt", "Dirt", "Dirt", "Dirt"};
+        String[][] generatedBlocks = new String[3][3];
+        Random rn = new Random();
+        int answer;
+        
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                answer = rn.nextInt(7);
+                generatedBlocks[i][j] = possibleBlocks[answer];
+            }
+            
+        }
+        generatedBlocks[1][1] = c1.getUsername();
+        String world = "";
+        
+        world += "Your coordinates: " + c1.getX() + " " + c1.getY() + " " + c1.getZ() + "\n";
+        for (int i = 0; i < 3; i++) { //Could make a second for loop to make it make a larger terrain
+            world += generatedBlocks[i][0] + "||" + generatedBlocks[i][1] + "||" + generatedBlocks[i][2] + "\n";
+            world += "----------------\n";
+        }
+        return world;
+    }
+}
