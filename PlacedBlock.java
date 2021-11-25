@@ -1,9 +1,9 @@
 public class PlacedBlock {
-   private String type;
+    private String type;
    private int x;
    private int y;
    private int z;
-   private double durablity;
+   private double durability;
    private double itemResist;
    //private drop Item;
    
@@ -49,5 +49,15 @@ public class PlacedBlock {
       }
    }
    
+   public void setLocation(int newX, int newY, int newZ) {
+       this.x = newX;
+       this.y = newY;
+       this.z = newZ;
+   }
    
+   public void setType(String newType) {
+       this.type = newType;
+   }
+   
+   //Methods that do something
 }
