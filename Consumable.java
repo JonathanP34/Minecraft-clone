@@ -1,3 +1,10 @@
+/**
+* This is the Consumable class. This class extends Item and builds the base for a consumable item
+*
+* @author Christopher Vasilianu
+* @date Nov 25, 2021
+*/
+
 public class Consumable extends Item{
     private double hungerChange;
     
