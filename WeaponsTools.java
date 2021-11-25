@@ -30,6 +30,6 @@ public class WeaponsTools extends Item {
 
     // Methods
     public void lowerDurability() {
-
+        this.durability -=1;
     }
 }
