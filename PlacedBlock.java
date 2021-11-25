@@ -1,7 +1,7 @@
 /**
 * This is the PlacedBlock class. This class is the base for all the blocks in our version of Minecraft
 *
-* @author Jonathan Petrs
+* @author Jonathan Peters
 * @date Nov 25, 2021
 */
 
