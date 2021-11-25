@@ -2,7 +2,7 @@
 * This is the Weapon class. Tihs class extends Item and builds the base for a weapon
 *
 * @author Christopher Vasilianu
-* @date: Nov 25, 2021
+* @date Nov 25, 2021
 */
 
 public class WeaponsTools extends Item {
