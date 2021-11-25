@@ -26,7 +26,11 @@ public class Item {
     }
 
     // Methods
-
+    
+    public void removeConsumable() {
+        this.hungerChange -=1;
+    }
+    
     public String toString() {
         String ret = "Type: " + this.type + "\nItem number: " + this.numItem;
         return ret;
