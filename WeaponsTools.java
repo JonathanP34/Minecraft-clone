@@ -23,7 +23,7 @@ public class WeaponsTools extends Item{
     }
 
     public double getDurability() {
-        return this.getDurability();
+        return this.durability;
     }
 
     public int getWeaponPower() {
