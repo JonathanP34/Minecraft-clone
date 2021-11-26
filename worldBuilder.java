@@ -14,8 +14,6 @@ public class WorldBuilder {
         PlacedBlock[] createdBlocks = new PlacedBlock[4]; 
         createdBlocks = PlacedBlock.makeBlocks();
         
-        public static 
-        
         PlacedBlock[][] generatedBlocks = new PlacedBlock[3][3];
         Random rn = new Random();
         int answer;
