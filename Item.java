@@ -6,8 +6,8 @@
 */
 
 public class Item {
-    private String type;
-    private int numItem;
+    protected String type;
+    protected int numItem;
     
     public Item (String type, int numItem) {
         this.type = type;
@@ -33,13 +33,12 @@ public class Item {
     }
 
     // Methods
-    
-    public void removeConsumable() {
-        this.numItem -=1;
-    }
-    
     public String toString() {
         String ret = "Type: " + this.type + "\nItem number: " + this.numItem;
         return ret;
+    }
+
+    public void removeConsumable() {
+        this.numItem -=1;
     }
 }

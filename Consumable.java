@@ -24,4 +24,17 @@ public class Consumable extends Item{
     }
 
     // Methods
+    public void use(double currentHunger) {
+        if ((this.hungerChange += currentHunger) > 10) {
+            this.hungerChange = 10;
+            System.out.println("You have reached max hunger.");
+        }
+        this.numItem -=1;
+    }
+
+    public void ranOut() {
+        if (this.numItem <= 0) {
+            System.out.println ("You no longer have " + this.type);
+        }
+    }
 }
