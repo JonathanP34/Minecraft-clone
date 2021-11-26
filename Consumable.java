@@ -14,7 +14,7 @@ public class Consumable extends Item{
     }
     
     // Getters
-    public double hungerChange() {
+    public double getHungerChange() {
         return this.hungerChange;
     }
 
@@ -24,9 +24,9 @@ public class Consumable extends Item{
     }
 
     // Methods
-    public void use(double currentHunger) {
-        if ((this.hungerChange += currentHunger) > 10) {
-            this.hungerChange = 10;
+    public static void use(double newHungerChange) {
+        if ((this.getHungerChange() += newHungerChange) > 10) {
+            this.setHungerChange = 10;
             System.out.println("You have reached max hunger.");
         }
         this.numItem -=1;
