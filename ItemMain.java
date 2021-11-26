@@ -20,18 +20,6 @@ public class ItemMain {
         // Using item
 
         // Using weapon/tool
-
-    /*
-        //Changing the stats of the objects
-        for (int i = 0; i < objects.size(); i++) {
-            objects.get(i).setXAxis(4);
-            objects.get(i).setYAxis(-8);
-            objects.get(i).setZAxis(-1);
-            objects.get(i).setHP(4);
-            objects.get(i).die();
-            objects.get(i).setType("New type");
-            objects.get(i).noise();
-        }
-    */
+        
     }
 }
