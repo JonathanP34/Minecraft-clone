@@ -102,4 +102,3 @@ public class Character extends MovingThing {
          }
     }
 }
-}
