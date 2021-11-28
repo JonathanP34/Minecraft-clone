@@ -1,9 +1,11 @@
 /**
-* This is the Character class. This class extends the Moving things class and is the base for your playable character
+* This is the Character class. This class extends the Moving things class and is the  base for your playable character
 *
 * @author Jonathan Peters
 * @date Nov 25, 2021
 */
+
+import java.util.*;
 
 public class Character extends MovingThing {
     private double hunger;
@@ -41,6 +43,7 @@ public class Character extends MovingThing {
         return this.username;
     }
     
+    //Getting all of the generated items from the item class and returning them
     public String[] getInventory() {
         Item[] inventory = new Item[3];
         inventory = Item.generateInventory();
@@ -55,6 +58,7 @@ public class Character extends MovingThing {
         
     }
 
+    //This allows the user to specify which item they want to use from their inventory
     public int getInventoryMarker() {
         return this.inventoryMarker;
     }
@@ -80,6 +84,7 @@ public class Character extends MovingThing {
     }
     
       //methods that do something
+    //Allows the user to crouch
     public void crouch() {
         if (isCrouch == false) {
             this.setSize(-1,0, 0);
@@ -94,6 +99,7 @@ public class Character extends MovingThing {
     }
       //Ideally, this would be user input but for now it can stay like this where the values are inputted in 
       //the back end
+    //Allows the user to move, and every time they move they lose some hunger(static amount)
     public void move(int newX, int newY, int newZ) {
         this.setXAxis(newX);
         this.setYAxis(newY);
@@ -101,11 +107,12 @@ public class Character extends MovingThing {
         this.hunger -= 0.5;
         if (this.hunger == 0) {
             this.die("Hunger");
-        } else {
+        } else { //If the user doesnt die, then generate the terrain around the user 
             System.out.println(WorldBuilder.generateTerrain(this));
         }
     }
 
+    //Allowing the user to eat food, but not pass the max amount of fod
     public void eat(double foodValue) {
           if ((this.hunger += foodValue) > 20) {
               this.hunger = 20;
@@ -113,7 +120,8 @@ public class Character extends MovingThing {
               this.hunger += foodValue;
           }  
     }
-      
+    
+    //Outputting the users held item 
     public void heldItem() {
         Item[] inventory = new Item[3];
         inventory = Item.generateInventory();
@@ -121,6 +129,7 @@ public class Character extends MovingThing {
         System.out.println(inventory[this.inventoryMarker].toString());
     }
     
+    //Printing the iventory, but doesnt return it
     public void printInventory() {
       Item[] inventory = new Item[3];
       inventory = Item.generateInventory();
@@ -130,6 +139,7 @@ public class Character extends MovingThing {
       }
     }
 
+    //Returns the characters stats
     public String toString() {
         String ret = "x: " + this.getX() + " y: " + this.getY() + " z: " + 
                     this.getZ() + "\nHeight: " + this.getHeight() + " Width:" +
@@ -138,6 +148,7 @@ public class Character extends MovingThing {
         return ret;
     }
 
+    //Mine block class
     public void mineBlock(int x, int y, int z) {
         int xDiff = this.getX() - x;
         int yDiff = this.getY() - y;
@@ -147,17 +158,24 @@ public class Character extends MovingThing {
         inventory = Item.generateInventory();
         double pickPower = inventory[this.inventoryMarker].getPickPower();
         
-        PlacedBlock placedBlock;
-        placedBlock = new PlacedBlock("NA", 0, 0, 0, 100, 2);
+        //Generating instances of the blocks
+        PlacedBlock[] placedBlock;
+        placedBlock = PlacedBlock.makeBlocks();
 
+        Random rn = new Random(); //Random number generator to choose random block 
+        int answer;
+        answer = rn.nextInt(4);
+        
+        //Seeing if that block is in range, and if it is do the block break method
         if (xDiff > -2 && xDiff < 2) {
             if (yDiff > -2 && yDiff < 2) {
-               placedBlock.breakBlock(x, y, pickPower, placedBlock.getDurability(), placedBlock.getItemResist()); //Need to get the pickPower of the itemn being held
+               placedBlock[answer].breakBlock(x, y, pickPower, placedBlock[answer].getDurability(), placedBlock[answer].getItemResist()); //Need to get the pickPower of the itemn being held
                
             }
         }
     }
 
+    //Overridding the die method from moving thing
     public void die(String reason) {
         System.out.println(this.username + " died from " + reason);
         System.exit(0);
