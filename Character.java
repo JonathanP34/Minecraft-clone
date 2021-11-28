@@ -157,4 +157,9 @@ public class Character extends MovingThing {
             }
         }
     }
+
+    public void die(String reason) {
+        System.out.println(this.username + " died from " + reason);
+        System.exit(0);
+    }
 }
