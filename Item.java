@@ -1,7 +1,5 @@
-
-
 /**
-* This is the Item class. It is a base to everything that can be considered an item
+* This is the Item class. It is a base to everything that can be considered an item, however, nothing currently extends the class for simplicities sake
 *
 * @author Christopher Vasilianu and Jonathan Peters
 * @date Nov 25, 2021
@@ -75,14 +73,17 @@ public class Item {
     }
     // Methods
     
+    //Removing the consumable/decresaing it by one when it breaks
     public void removeConsumable() {
         this.numItem -= 1;
     }
     
+    //Reducing durability of the item
     public void lowerDurability() {
       this.durability -= 5;
     }
 
+    //Generating 3 instances of the item classm two of which are tools, the other is food
     public static Item[] generateInventory() {
         Item[] inventory = new Item[3];
         inventory[0] = new Item("Pickaxe", 1, 15, 5, 0, 100);
@@ -92,6 +93,7 @@ public class Item {
         return inventory;
     }
     
+    //Outputting all of the stats of the item
     public String toString() {
         String ret = "Type: " + this.type + "\nItem number: " + this.numItem + "\nPick Power: " + this.pickPower + "\nSword Power: " + this.weaponPower + "\nHunger Change: " + this.hungerChange + "\nDurability: " + this.durability;
         return ret;
