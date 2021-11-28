@@ -58,7 +58,7 @@ public class PlacedBlock {
    
    public void setDurability(double newDurability) {
       this.durability -= newDurability;
-      if (this.durability < 0) {
+      if (this.durability < 0) { //If the blocks breaks
          System.out.println("Block destroyed");
       }
    }
@@ -67,26 +67,30 @@ public class PlacedBlock {
       this.type = newType;
    }
    
+   //Allows the user to generate a list of possible blocks to help with the world class
    public static PlacedBlock[] makeBlocks() {
-      PlacedBlock[] blocks = new PlacedBlock[4];
-      blocks[0] = new PlacedBlock("Dirt", 0, 0, 0, 20, 2);
-      blocks[1] = new PlacedBlock("Stone", 0, 0, 0, 50, 3);
-      blocks[2] = new PlacedBlock("Iron", 0, 0, 0, 75, 5);
-      blocks[3] = new PlacedBlock("Sand", 0, 0, 0, 20, 0);
+      PlacedBlock[] blocks = new PlacedBlock[4]; //List of blocks that is returned
+      blocks[0] = new PlacedBlock("Dirt", 0, 0, 0, 30, 1);
+      blocks[1] = new PlacedBlock("Stone", 0, 0, 0, 75, 3);
+      blocks[2] = new PlacedBlock("Iron", 0, 0, 0, 100, 5);
+      blocks[3] = new PlacedBlock("Sand", 0, 0, 0, 30, 0);
       
       return blocks;
    }
    
+   //Breaking the specified block
    public void breakBlock(int x, int y, double pickPower, double durability, double itemResist) {
        double powerDiff;
-
+       //Making the lowest possible valyue for item resist 1
        if (pickPower-itemResist <= 0) {
           powerDiff = 1;
        } else {
           powerDiff = (pickPower - itemResist);
        }
+       //Calculating the number of hits required to mine the block
        double timeToMine = durability / (powerDiff);
 
+       //Outputting the number of hits with Dink and putting the code to sleep for 1 second between each hit
        for(int i = 0; i < Math.round(timeToMine); i++) {
            try {
                 System.out.println("Dink");
@@ -95,6 +99,7 @@ public class PlacedBlock {
                System.out.println("Error");
            }
        }
+       //Outputting which block was mined and how long it took
        System.out.println("The block at x:" + x + " and y:" + y + " was mined!");
        System.out.println("It took " + Math.round(timeToMine) + " hit(s) to mine the block!");
    } 
