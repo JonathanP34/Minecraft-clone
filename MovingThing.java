@@ -1,5 +1,5 @@
 /**
-* This is the MovingThing class. This class is the base for all moving things in our version of Minecraft
+* This is the MovingThing class. This class is the base for all moving things in our version of Minecraft and extends character but could extend all mobs too
 *
 * @author Jonathan Peters
 * @date Nov 25, 2021
@@ -81,14 +81,14 @@ public class MovingThing {
     
     public void setHP(int newHP) {
         int health = this.hp = newHP;
-        if (health < 0) {
+        if (health < 0) { //Killing the user if they have no hp
             health = 0;
             this.die("No hp"); 
         }
     }
             
     //Other methods
-    public void noise() {
+    public void noise() { //making noise
         System.out.println("Noise");
     }
     
@@ -96,7 +96,7 @@ public class MovingThing {
      *
      * @return
      */
-    public String toString() {
+    public String toString() { //Outputting stats
         String ret = "x: " + this.x + " y: " + this.y + " z: " + 
                     this.z + "\nHeight: " + this.height + " Width:" +
                     this.width + " Length: " + this.length +"\nHP: "
@@ -104,7 +104,7 @@ public class MovingThing {
         return ret;
     }
     
-    public void die(String reason) {
+    public void die(String reason) { //User dies from the specified reason
         System.out.println(this.type + " died from " + reason);
         System.exit(0);
     }
